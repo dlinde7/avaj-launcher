@@ -10,9 +10,12 @@ public class Tower {
 
     public void register(Flyable flyable)
     {
-        if (observers.contains(flyable))
+        if (observers.contains(flyable)){
             return;
-        observers.add(flyable);
+        }
+        else {
+            observers.add(flyable);
+        }
     }
 
     public void unregister(Flyable flyable)

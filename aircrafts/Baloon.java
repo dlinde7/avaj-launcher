@@ -25,30 +25,34 @@ public class Baloon extends Aircraft implements Flyable {
             put("SNOW", "M-m-m-m-nan it's cold.");
         }};
 
-        if (weather.equals("SUN"))
+        if (weather.equals("SUN")){
             this.coordinates = new Coordinates(
                     coordinates.getLongitude() + 2,
                     coordinates.getLatitude(),
                     coordinates.getHeight() + 4
             );
-        else if (weather.equals("RAIN"))
+        }
+        else if (weather.equals("RAIN")){
             this.coordinates = new Coordinates(
                     coordinates.getLongitude(),
                     coordinates.getLatitude(),
                     coordinates.getHeight() - 5
             );
-        else if (weather.equals("FOG"))
+        }
+        else if (weather.equals("FOG")){
             this.coordinates = new Coordinates(
                     coordinates.getLongitude(),
                     coordinates.getLatitude(),
                     coordinates.getHeight() - 3
             );
-        else if (weather.equals("SNOW"))
+        }
+        else if (weather.equals("SNOW")){
             this.coordinates = new Coordinates(
                     coordinates.getLongitude(),
                     coordinates.getLatitude(),
                     coordinates.getHeight() - 15
             );
+        }
 
         Simulator.writer.println("Baloon#" + this.name + "(" + this.id + "): " + messages.get(weather));
         if (this.coordinates.getHeight() == 0)

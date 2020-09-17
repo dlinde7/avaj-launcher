@@ -25,30 +25,35 @@ public class JetPlane extends Aircraft implements Flyable {
             put("SNOW", "Winter is here!");
         }};
 
-        if (weather.equals("SUN"))
+        if (weather.equals("SUN")){
             this.coordinates = new Coordinates(
                     coordinates.getLongitude(),
                     coordinates.getLatitude() + 10,
                     coordinates.getHeight() + 2
             );
-        else if (weather.equals("RAIN"))
+        }
+        else if (weather.equals("RAIN")){
             this.coordinates = new Coordinates(
                     coordinates.getLongitude(),
                     coordinates.getLatitude() + 5,
                     coordinates.getHeight()
             );
-        else if (weather.equals("FOG"))
+        }
+        else if (weather.equals("FOG")){
             this.coordinates = new Coordinates(
                     coordinates.getLongitude(),
                     coordinates.getLatitude() + 1,
                     coordinates.getHeight()
             );
-        else if (weather.equals("SNOW"))
+        }
+        else if (weather.equals("SNOW")){
             this.coordinates = new Coordinates(
                     coordinates.getLongitude(),
                     coordinates.getLatitude(),
                     coordinates.getHeight() - 7
             );
+        }
+        
         Simulator.writer.println("JetPlane#" + this.name + "(" + this.id + "): " + messages.get(weather));
         if (this.coordinates.getHeight() == 0)
         {

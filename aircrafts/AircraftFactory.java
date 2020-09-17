@@ -8,13 +8,18 @@ public class AircraftFactory {
     {
         Coordinates coordinates = new Coordinates(longitude, latitude, height);
 
-        if (type.toLowerCase().equals("baloon"))
+        if (type.toLowerCase().equals("baloon")){
             return new Baloon(name, coordinates);
-        else if (type.toLowerCase().equals("jetplane"))
+        }
+        else if (type.toLowerCase().equals("jetplane")){
             return new JetPlane(name, coordinates);
-        else if (type.toLowerCase().equals("helicopter"))
+        }
+        else if (type.toLowerCase().equals("helicopter")){
             return new Helicopter(name, coordinates);
-        return null;
+        }
+        else {
+            return null;
+        }
     }
 
 }

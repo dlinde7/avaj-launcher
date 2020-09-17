@@ -12,7 +12,7 @@ public class Simulator {
     public static void main(String[] arg){
         if (arg.length < 1){
             return;
-        }
+        } 
         else if (arg.length > 1){
             System.out.println("To many arguments");
             return;
@@ -38,7 +38,7 @@ public class Simulator {
 
             while ((strLine = br.readLine()) != null)
             {
-                if (line == 1)
+                if (line == 1){
                     try {
                         cycles = Integer.parseInt(strLine);
                         if (cycles < 0)
@@ -50,13 +50,15 @@ public class Simulator {
                         System.out.println("Error: first line of scenario file must be an integer.");
                         return;
                     }
-                else
-                {
+                }
+                else {
                     splitstr = strLine.split(" ");
-                    if (splitstr.length == 1 && splitstr[0].isEmpty())
+                    if (splitstr.length == 1 && splitstr[0].isEmpty()){
                         continue;
-                    if (splitstr.length != 5)
+                    }
+                    if (splitstr.length != 5){
                         throw new Exception("Error: line " + line + ": there must be 5 parameters.");
+                    }
 
                     try {
                         aircraftFactory.newAircraft(
@@ -86,6 +88,7 @@ public class Simulator {
         while (cycles > 0)
         {
             weatherTower.changeWeather();
+            writer.println("*#----------#")
             cycles--;
         }
         writer.close();
