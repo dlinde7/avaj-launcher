@@ -88,7 +88,7 @@ public class Simulator {
         while (cycles > 0)
         {
             weatherTower.changeWeather();
-            writer.println("*#----------#")
+            writer.println("#----------#");
             cycles--;
         }
         writer.close();
